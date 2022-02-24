@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "RepairArchiveDWv2", "RepairArchiveDWv2\RepairArchiveDWv2.dwproj", "{EC964BCA-4FCE-4946-91DB-B2F2D5424C2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC964BCA-4FCE-4946-91DB-B2F2D5424C2F}.Development|Default.ActiveCfg = Development
+		{EC964BCA-4FCE-4946-91DB-B2F2D5424C2F}.Development|Default.Build.0 = Development
+		{EC964BCA-4FCE-4946-91DB-B2F2D5424C2F}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1B10B8F-A07C-402C-9B52-04971C905912}
+	EndGlobalSection
+EndGlobal

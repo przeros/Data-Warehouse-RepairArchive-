@@ -1,0 +1,262 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="5d52e823-e666-425c-aef7-f95134337274" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Plane</ID>
+  <Name>Dim Plane</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3697" scrolltop="-6257" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12303" y="16933" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_plane" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4868" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00000413000043110000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Dim_plane" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3697</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-6257</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="b1bdadfc-0648-426a-a1f9-90b6f4449029">
+    <DataSourceViewID>Repair Archive Warehouse</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="30559b76-b749-4464-9333-62caca9ddd92">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="2c0347d5-725f-4b2b-b853-145fca324751">
+      <ID>Id Plane Sk</ID>
+      <Name>Id Plane Sk</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>2001</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c6dd6337-8eaf-4267-b86a-23f54aa8074e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cfb48438-e8bb-4a58-8c8f-e7344fe696e4">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>Id_plane_Sk</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="22364671-da42-448d-9da8-8d8a550c39fe">
+          <AttributeID>Id Plane Bk</AttributeID>
+          <Name>Id Plane Bk</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="007e8abc-4b29-4716-a14b-b7d7313ab1ec">
+          <AttributeID>Model</AttributeID>
+          <Name>Model</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="052ce9de-304c-40fc-95f9-f72607d6cb19">
+          <AttributeID>Type</AttributeID>
+          <Name>Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a41d8f5e-a779-4bc8-8d3d-af5e5a27903a">
+          <AttributeID>Capacity Category</AttributeID>
+          <Name>Capacity Category</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4a2e7926-d1ad-4ed2-940e-8430ad4c07af">
+          <AttributeID>Year Of Production Category</AttributeID>
+          <Name>Year Of Production Category</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="08db071e-263c-46a9-8fd0-d91c2c951bdf">
+          <AttributeID>Insertion Date</AttributeID>
+          <Name>Insertion Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c4778c6a-ccae-4796-91cd-b5317cf2f6b9">
+          <AttributeID>Disactivation Date</AttributeID>
+          <Name>Disactivation Date</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2dad252b-219a-4f9e-a272-4508ea8987ce">
+      <ID>Id Plane Bk</ID>
+      <Name>Id Plane Bk</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="04942af7-b9ec-4c74-9e52-d0b704c11d92">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a1da907a-4b82-4017-a235-57a4209d691d">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>Id_plane_Bk</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8ad9185a-a014-49d2-ad94-0b290f2928bf">
+      <ID>Model</ID>
+      <Name>Model</Name>
+      <EstimatedCount>12</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="06cb2c45-adc4-44ba-94b3-2588629e291a">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4ee6ef76-ad74-4e90-bf73-331f82c0b9d5">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>model</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c49f4f88-3b52-4ec2-ba6b-d99553a8fc83">
+      <ID>Type</ID>
+      <Name>Type</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b7691b23-1b62-4416-ba99-c87174bc6a9f">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c5f77624-9aba-4da2-a4f9-9fc28c6eaa8b">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="554520ae-3ca7-4594-8a54-bbc04e97e11b">
+      <ID>Capacity Category</ID>
+      <Name>Capacity Category</Name>
+      <EstimatedCount>4</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dd26a84c-a258-424c-b791-3a6c824ae15e">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a6acbc6-a431-43f8-94f8-22573dda182e">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>capacity_category</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="154c759b-fd6c-4d87-83ca-d231b9ac3228">
+      <ID>Year Of Production Category</ID>
+      <Name>Year Of Production Category</Name>
+      <EstimatedCount>5</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c2bfe8e3-4007-4249-9b51-dca3138a7457">
+          <DataType>WChar</DataType>
+          <DataSize>255</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="98e72dfd-61cb-4ebd-8716-39764eb8dd4c">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>year_of_production_category</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9edf358f-98b2-46a1-86e6-f066feae7282">
+      <ID>Insertion Date</ID>
+      <Name>Insertion Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="02538a0b-c6af-4ab0-ab65-905efd6767e3">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7ae47a5b-6c16-4d21-8569-7f16cc958030">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>insertion_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9c02a416-ecdd-41a5-ab8c-152eff1ae6a4">
+      <ID>Disactivation Date</ID>
+      <Name>Disactivation Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c0c8562-9cab-4534-be6f-b2d66c54f7cc">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f3a9f0dc-3a9c-437a-9c7b-157529703de9">
+            <TableID>dbo_Dim_plane</TableID>
+            <ColumnID>disactivation_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="78cbb0d4-4ae4-4951-8374-deefcba19245">
+      <ID>Hierarchy</ID>
+      <Name>Plane Hierarchy</Name>
+      <Levels>
+        <Level dwd:design-time-name="4b556a6a-d55f-4db8-a4b0-8ddb92052c8f">
+          <ID>Type</ID>
+          <Name>Type</Name>
+          <SourceAttributeID>Type</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="de14f210-b4f5-4ab9-b298-ccc1626ea8dc">
+          <ID>Model</ID>
+          <Name>Model</Name>
+          <SourceAttributeID>Model</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

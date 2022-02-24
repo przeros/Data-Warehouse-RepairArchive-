@@ -1,0 +1,218 @@
+--1
+WITH MEMBER [Liczba napraw (poprzedni miesi¹c)] AS '(PARALLELPERIOD([Id Start Date].[Date Hierarchy].[Month]
+, 1, [Id Start Date].[Date Hierarchy].CurrentMember), [Measures].[Measures].[Liczba napraw])'
+SELECT CrossJoin([Id Start Date].[Date Hierarchy].[Year].[2014].[12],
+EXCEPT([Dim Plane].[Type].Members,{[Dim Plane].[Type].[All],[Dim Plane].[Type].[All].UNKNOWNMEMBER})) ON ROWS,
+{[Measures].[Liczba napraw], [Liczba napraw (poprzedni miesi¹c)]} ON COLUMNS
+FROM [Repair Archive Warehouse];
+
+
+
+--2
+WITH 
+	MEMBER [Measures].[Wydajnoœæ mechanika ] AS [Measures].[Wydajnoœæ mechanika], FORMAT_STRING='#,##0.0000'
+SELECT 
+{
+	[Measures].[Wydajnoœæ mechanika ]
+} ON COLUMNS,
+{
+	(
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019],
+		EXCEPT([Dim Mechanic].[Name].Members,
+{[Dim Mechanic].[Name].[All],[Dim Mechanic].[Name].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Mechanic].[Surname].Members,
+{[Dim Mechanic].[Surname].[All],
+[Dim Mechanic].[Surname].[All].UNKNOWNMEMBER})
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--3
+SELECT 
+{
+	[Measures].[Liczba czêœci u¿ytych w naprawie]
+} ON COLUMNS,
+{
+	(
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019],
+EXCEPT([Dim Part].[Part Type].Members, {[Dim Part].[Part Type].[All], [Dim Part].[Part Type].[All].UNKNOWNMEMBER}), 
+TOPCOUNT(EXCEPT([Dim Part].[Part Model].Members, {[Dim Part].[Part Model].[All],[Dim Part].[Part Model].[All].UNKNOWNMEMBER}), 1, 
+([F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019], [Measures].[Liczba czêœci u¿ytych w naprawie]))
+	),
+	(
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019],
+EXCEPT([Dim Part].[Part Type].Members, {[Dim Part].[Part Type].[All], [Dim Part].[Part Type].[All].UNKNOWNMEMBER}), 
+		NONEMPTY
+		(
+			BOTTOMCOUNT(EXCEPT([Dim Part].[Part Model].Members, 
+{[Dim Part].[Part Model].[All],[Dim Part].[Part Model].[All].UNKNOWNMEMBER}), 1, 
+([F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019], [Measures].[Liczba czêœci u¿ytych w naprawie]))
+		)
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--4
+WITH MEMBER [Measures].[Œrednia pensja mechanika] AS CASE
+    WHEN [Dim Mechanic].[Mechanic Salary Category] = [Dim Mechanic].[Mechanic Salary Category].&[very low]
+    THEN 5000
+    ELSE
+        CASE
+            WHEN [Dim Mechanic].[Mechanic Salary Category] = [Dim Mechanic].[Mechanic Salary Category].&[low]
+            THEN 7000
+            ELSE
+                CASE
+                    WHEN [Dim Mechanic].[Mechanic Salary Category] = [Dim Mechanic].[Mechanic Salary Category].&[average]
+                    THEN 11000
+                    ELSE
+                        CASE
+                            WHEN [Dim Mechanic].[Mechanic Salary Category] = [Dim Mechanic].[Mechanic Salary Category].&[high]
+                            THEN 15000
+                            ELSE
+                                CASE
+                                    WHEN [Dim Mechanic].[Mechanic Salary Category] = [Dim Mechanic].[Mechanic Salary Category].&[very high]
+                                    THEN 22000
+									END
+							END
+					END
+			END
+	END
+	MEMBER [Measures].[Stosunek pensji do wydajnoœci] AS [Measures].[Œrednia pensja mechanika] / [Measures].[Wydajnoœæ mechanika],
+	FORMAT_STRING='#,##0.00'
+SELECT 
+{
+	[Measures].[Stosunek pensji do wydajnoœci]
+} ON COLUMNS,
+{
+	(
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019].[12],
+		EXCEPT([Dim Mechanic].[Name].Members,
+		{[Dim Mechanic].[Name].[All],[Dim Mechanic].[Name].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Mechanic].[Surname].Members,
+		{[Dim Mechanic].[Surname].[All],
+		[Dim Mechanic].[Surname].[All].UNKNOWNMEMBER}),
+		EXCEPT([Dim Mechanic].[Mechanic Salary Category].Members,
+		{[Dim Mechanic].[Mechanic Salary Category].[All],
+		[Dim Mechanic].[Mechanic Salary Category].[All].UNKNOWNMEMBER})
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--5
+WITH 
+	MEMBER [Measures].[Czas spêdzony na naprawach przez samoloty (dni)] AS [Measures].[Czas spêdzony na naprawach przez samoloty], FORMAT_STRING='# dni'
+SELECT 
+{
+	[Measures].[Czas spêdzony na naprawach przez samoloty (dni)]
+} ON COLUMNS,
+{
+	[Id Start Date].[Date Hierarchy].[Year].[2019].Children
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--6
+SELECT 
+{
+	[Measures].[Liczba czêœci u¿ytych w naprawie]
+} ON COLUMNS,
+{
+	(
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019].Children,
+		[Dim Part].[Part Cost Category].Children
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--7
+WITH 
+	MEMBER [Measures].[Stosunek skutecznoœci napraw do liczby mechaników] 
+	AS [Measures].[Liczba udanych napraw mechaników] / [Measures].[Liczba udzia³ów mechaników przy naprawie], 
+	FORMAT_STRING='#,##0.0000'
+SELECT 
+{
+	[Measures].[Liczba udzia³ów mechaników przy naprawie],
+	[Measures].[Liczba udanych napraw mechaników],
+	[Measures].[Stosunek skutecznoœci napraw do liczby mechaników] 
+} ON COLUMNS,
+{
+	(
+		[Id Start Date].[Year].[2019],
+		[F Plane Repair - Id Start Date].[Date Hierarchy].[Year].[2019].Children
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--8
+WITH 
+	MEMBER [Measures].[Skutecznoœæ napraw samolotów (procent)] AS [Measures].[Skutecznoœæ napraw samolotów], FORMAT_STRING='Percent'
+SELECT 
+{
+	[Measures].[Skutecznoœæ napraw samolotów (procent)]
+} ON COLUMNS,
+{
+	(
+		EXCEPT([Dim Mechanic].[Name].Members,
+		{[Dim Mechanic].[Name].[All],[Dim Mechanic].[Name].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Mechanic].[Surname].Members,
+		{[Dim Mechanic].[Surname].[All],
+		[Dim Mechanic].[Surname].[All].UNKNOWNMEMBER})
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--9
+WITH 
+	MEMBER [Measures].[Koszt napraw samolotów (notacja wyk³adnicza)] AS [Measures].[Koszt napraw samolotów], FORMAT_STRING='Currency'
+SELECT 
+{
+	[Measures].[Koszt napraw samolotów (notacja wyk³adnicza)]
+} ON COLUMNS,
+{
+	(
+		EXCEPT([Dim Plane].[Year Of Production Category].Members,
+		{[Dim Plane].[Year Of Production Category].[All],[Dim Plane].[Year Of Production Category].[All].UNKNOWNMEMBER})
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]
+
+
+
+--10
+WITH 
+	MEMBER [Measures].[Stosuenk liczby udanych napraw do wszystkich (procent)] AS [Measures].[Stosuenk liczby udanych napraw do wszystkich], 
+	FORMAT_STRING='Percent'
+SELECT 
+{
+	[Measures].[Stosuenk liczby udanych napraw do wszystkich (procent)]
+} ON COLUMNS,
+{
+	(
+		EXCEPT([Dim Plane].[Id Plane Sk].Members,
+		{[Dim Plane].[Id Plane Sk].[All],[Dim Plane].[Id Plane Sk].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Plane].[Type].Members,
+		{[Dim Plane].[Type].[All],[Dim Plane].[Type].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Plane].[Model].Members,
+		{[Dim Plane].[Model].[All],
+		[Dim Plane].[Model].[All].UNKNOWNMEMBER}),
+		EXCEPT([Dim Plane].[Capacity Category].Members,
+		{[Dim Plane].[Capacity Category].[All], [Dim Plane].[Capacity Category].[All].UNKNOWNMEMBER}), 
+		EXCEPT([Dim Plane].[Year Of Production Category].Members,
+		{[Dim Plane].[Year Of Production Category].[All],
+		[Dim Plane].[Year Of Production Category].[All].UNKNOWNMEMBER})
+	)
+} ON ROWS
+FROM [Repair Archive Warehouse]

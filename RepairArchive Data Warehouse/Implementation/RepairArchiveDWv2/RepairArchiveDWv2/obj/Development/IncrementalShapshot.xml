@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>RepairArchiveDWv2</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>w6zvHVEvtKSZ2xpMWMK61wEUsGQ=26.11.2021 12:15:5405.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Repair Archive Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>dvDl46QE+snu+vf7eh98I7TlEi4=26.11.2021 12:16:3505.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Repair Archive Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>WpOCr2OIICLKGq/ZOlE47MIHdag=06.01.2022 20:36:3305.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Mechanic</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2wf/XaN5Fmi4n9TBna0fAZKyjvk=06.01.2022 20:36:3305.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>F Plane Repair</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/hJ1e3gC7vgB2k6wfsvtV5eI45g=06.01.2022 20:49:4405.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Part</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>8+pmfHbx1Hs8d/Bz+zvJnpr2H44=06.01.2022 20:36:3305.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>HI6ZWTwuuzL88xnDAOLIv7tGqR4=06.01.2022 20:36:3305.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BbORO7XKRg3vxkJdVIYd2jQOKa4=06.01.2022 21:04:5105.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Plane</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2V+Kz3F5fHHtcmU1Wog6sSItbwk=06.01.2022 20:36:3305.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Dim Test</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>MlfsbJSa1qX9Ajhv0EiubDIZ1iM=06.01.2022 21:39:1705.01.2022 20:19:57Ks0NbeiKtcuyw+PymLY7L3mQ5n4=06.01.2022 21:39:1705.01.2022 20:19:57</TimeStamp>
+        <ID>
+          <String>Repair Archive Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>yHL6md2TQE2jdqKmSdLjwaBPUP8=26.11.2021 12:13:1605.01.2022 20:19:57</TimeStamp>
+      <ID>
+        <String>RepairArchiveDWv2</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2022-01-06T20:40:47.986667Z</LastDeployed>
+</DeploymentSnapshot>

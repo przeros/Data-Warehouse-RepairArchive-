@@ -1,0 +1,7 @@
+<ClearCache xmlns="http://schemas.microsoft.com/analysisservices/2019/engine">
+   <Object>
+      <DatabaseID>
+		  RepairArchiveDWv2
+	  </DatabaseID>
+   </Object>
+</ClearCache>

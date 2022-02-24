@@ -1,0 +1,286 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e911c081-4599-4ab6-9e48-49079d8dd644" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>F Plane Repair</ID>
+  <Name>F Plane Repair</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4631" scrolltop="-5966" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12303" y="16933" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01ee0000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="F_plane_repair" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_F_plane_repair" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4631</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5966</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="97eb949d-fc39-4d8a-86d2-165c958bb9a3">
+    <DataSourceViewID>Repair Archive Warehouse</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="84c5cfa6-8a49-49f2-aee1-b18263c61186">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="7f0aff61-7aab-4e2c-a465-59092638760c">
+      <ID>Id Repair</ID>
+      <Name>Id Repair</Name>
+      <Usage>Key</Usage>
+      <EstimatedCount>1000000</EstimatedCount>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e9401f1e-5f4a-46a1-b4c3-3c34538c6fab">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1e63eb1d-c94f-446a-9277-f61a2e4670fe">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_repair</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="5fb17d00-0af8-4010-8c78-3bbf910810b6">
+          <AttributeID>Id Start Date</AttributeID>
+          <Name>Id Start Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="31e68409-f495-4174-b3e1-f7c64de4bf22">
+          <AttributeID>Id End Date</AttributeID>
+          <Name>Id End Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c630fb69-041d-4051-9283-4dc3c683c9e4">
+          <AttributeID>Id Start Time</AttributeID>
+          <Name>Id Start Time</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dc5dd378-fbc6-4d7e-b6e8-ae58192eeb0a">
+          <AttributeID>Id Plane</AttributeID>
+          <Name>Id Plane</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0e4a8b3f-595c-4864-af4c-afa20083463b">
+          <AttributeID>Id Test</AttributeID>
+          <Name>Id Test</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0dc80a8a-a368-41bf-8c45-5603aaed65dd">
+          <AttributeID>Id End Time</AttributeID>
+          <Name>Id End Time</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="035008e4-0c85-4d9c-813e-f4d50b5bbdf5">
+          <AttributeID>Repair Time</AttributeID>
+          <Name>Repair Time</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="28b110ee-5f31-4513-876b-b9656b03e828">
+          <AttributeID>Repair Cost</AttributeID>
+          <Name>Repair Cost</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7f5934ed-92c9-4020-a5ee-9617323bf071">
+          <AttributeID>Is Successful</AttributeID>
+          <Name>Is Successful</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bcf89de5-390b-4fa8-a044-453cdb97fda9">
+      <ID>Id Start Date</ID>
+      <Name>Id Start Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="237b8c10-54e1-4429-b30b-787d5dd21531">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0dece61-3cb5-42dc-a94c-f8c49fedc487">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_start_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cfd611f2-d97e-43e6-9d01-edfb3321bc16">
+      <ID>Id End Date</ID>
+      <Name>Id End Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fa95a9a6-b5cf-42f9-bfce-5c826c7f0758">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="66af5223-866c-4f77-988d-faaed85eb09c">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_end_date</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="aedbe541-7b64-4e9e-9668-6fe4a15bf57b">
+      <ID>Id Start Time</ID>
+      <Name>Id Start Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="816f010a-20db-4d68-8190-42918fc13ed3">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="84799aee-0c8d-4cd8-95f1-d5f7d4278527">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_start_time</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3d4c2133-dd97-4613-b392-0592ca27fb33">
+      <ID>Id Plane</ID>
+      <Name>Id Plane</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41ace0f9-cf0d-44ee-ae9a-f5cfa0704f96">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9f29bc82-9da0-42b7-bf19-84f1d10d98eb">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_plane</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c36a945f-70cc-4f06-ad47-745d26f50181">
+      <ID>Id Test</ID>
+      <Name>Id Test</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c73ccc20-697c-4d2e-aed4-10932a6fa020">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d781ebab-b163-4bab-972d-618d9ba40dfe">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_test</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="638963dc-b3ef-4a08-bac4-a2308ea56db3">
+      <ID>Id End Time</ID>
+      <Name>Id End Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a6cf874c-4271-472f-aae4-c205e377dfba">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f915cb60-53fe-4b21-a216-90ab776aab8b">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>Id_end_time</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="33911dfe-110a-49a1-8516-d5acf2292ff9">
+      <ID>Repair Time</ID>
+      <Name>Repair Time</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="13d71623-0e3d-4382-b594-ffefcdab3908">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5aa93603-f653-4087-8d08-041719d487f1">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>repair_time</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="feeebc2f-6ff5-441f-a35d-fb0d024472ed">
+      <ID>Repair Cost</ID>
+      <Name>Repair Cost</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0a90f6f5-508a-4609-9c56-5b3e10630c6d">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="175edbf5-00c6-489c-8a0a-93e78ca795d7">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>repair_cost</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a012c950-283b-4114-b63f-53b2693c5cf9">
+      <ID>Is Successful</ID>
+      <Name>Is Successful</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f6b7adc6-ad1e-4ed3-a980-505f78df89c4">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="45e0445d-d9ad-47da-879d-24a859e976ef">
+            <TableID>dbo_F_plane_repair</TableID>
+            <ColumnID>is_successful</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

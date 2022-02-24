@@ -1,0 +1,1471 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ede02100-11a4-4198-be0d-7cdb21aab622" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Repair Archive Warehouse</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>F Making Repair</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="184dcb43-5bd9-4f20-b12c-5988580afcc3">
+          <ID>F Making Repair</ID>
+          <Name>F Making Repair</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="b5ee87e7-7731-4a68-b201-a94f6d3563df">
+            <DataSourceViewID>Repair Archive Warehouse</DataSourceViewID>
+            <TableID>dbo_F_making_repair</TableID>
+          </Source>
+          <StorageMode>Holap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="43339bc3-82c4-45f2-9f1c-91aafffb4ca8">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="fd46011f-555f-472e-bfb1-c6193ffbf00a">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>2999745</EstimatedRows>
+          <AggregationDesignID>MakingRepairsAggregation</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>MakingRepairsAggregation</ID>
+          <Name>MakingRepairsAggregation</Name>
+          <CreatedTimestamp>2022-01-06T19:35:43.623333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-06T19:35:43.623333Z</LastSchemaUpdate>
+          <EstimatedRows>2999745</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Mechanic</AttributeID>
+                  <EstimatedCount>1501</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Surname</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Age Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Employment Date Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Mechanic Salary Category</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Repair</AttributeID>
+                  <EstimatedCount>1000000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Start Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Plane</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Test</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id End Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Repair Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Repair Cost</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Is Successful</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Plane</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Plane Sk</AttributeID>
+                  <EstimatedCount>2001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Plane Bk</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Model</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Type</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Capacity Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Production Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Insertion Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Disactivation Date</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Test</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Test</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Test Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Result</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Month</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Mechanic</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Date</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Parts Used In Repair</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="573a058e-89f4-4d98-bedb-b6b1e4f36ec4">
+          <ID>F Parts Used In Repair</ID>
+          <Name>F Parts Used In Repair</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="cd552541-25a6-4be1-8510-b48c8a70e8d0">
+            <DataSourceViewID>Repair Archive Warehouse</DataSourceViewID>
+            <TableID>dbo_F_parts_used_in_repair</TableID>
+          </Source>
+          <StorageMode>Holap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="7016187e-1421-479e-87f0-263cde5f605f">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="ee9fb9ab-cdf8-4f70-980c-df7e21a28772">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>3000064</EstimatedRows>
+          <AggregationDesignID>PartsUsedAggregation</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>PartsUsedAggregation</ID>
+          <Name>PartsUsedAggregation</Name>
+          <CreatedTimestamp>2022-01-06T20:07:46.736667Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-06T20:07:46.736667Z</LastSchemaUpdate>
+          <EstimatedRows>3000064</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Dim Part</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Part</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Model</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Type</AttributeID>
+                  <EstimatedCount>21</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Cost Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Production Date Category</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Repair</AttributeID>
+                  <EstimatedCount>1000000</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Start Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id End Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Start Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Plane</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Test</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id End Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Repair Time</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Repair Cost</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Is Successful</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Plane</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Plane Sk</AttributeID>
+                  <EstimatedCount>2001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Plane Bk</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Model</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Type</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Capacity Category</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Production Category</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Insertion Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Disactivation Date</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Test</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Test</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Test Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Result</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Type</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Model</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Capacity Category</AttributeID>
+                    </Attribute>
+                    <Attribute>
+                      <AttributeID>Year Of Production Category</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>F Plane Repair - Id End Time</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>F Plane Repair</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="3951e6ec-fd6d-4728-89fd-46d88792e456">
+          <ID>F Plane Repair</ID>
+          <Name>F Plane Repair</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="0224e058-5ca2-4e54-9ec9-d01dc791528f">
+            <DataSourceViewID>Repair Archive Warehouse</DataSourceViewID>
+            <TableID>dbo_F_plane_repair</TableID>
+          </Source>
+          <StorageMode>Holap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="694842c4-a4bc-492c-a0ac-9dc315edf4e0">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <AggregationStorage>MolapOnly</AggregationStorage>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="5bb659dc-2717-493a-9b66-f05331045e99">
+              <NotificationTechnique>Server</NotificationTechnique>
+            </Source>
+          </ProactiveCaching>
+          <EstimatedRows>1000000</EstimatedRows>
+          <AggregationDesignID>PlaneRepairAggregation</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>PlaneRepairAggregation</ID>
+          <Name>PlaneRepairAggregation</Name>
+          <CreatedTimestamp>2022-01-06T20:09:03.8Z</CreatedTimestamp>
+          <LastSchemaUpdate>2022-01-06T20:09:03.8Z</LastSchemaUpdate>
+          <EstimatedRows>1000000</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Id Start Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Id End Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Date</AttributeID>
+                  <EstimatedCount>26280</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year</AttributeID>
+                  <EstimatedCount>72</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Month</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Day</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Id Start Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Plane</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Plane Sk</AttributeID>
+                  <EstimatedCount>2001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Id Plane Bk</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Model</AttributeID>
+                  <EstimatedCount>12</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Type</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Capacity Category</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Year Of Production Category</AttributeID>
+                  <EstimatedCount>5</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Insertion Date</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Disactivation Date</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Test</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Test</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Test Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Result</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Description</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Id End Time</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Time</AttributeID>
+                  <EstimatedCount>24</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hour</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Dim Part</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Id Part</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Model</AttributeID>
+                  <EstimatedCount>200001</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Type</AttributeID>
+                  <EstimatedCount>21</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Part Cost Category</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Production Date Category</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Id Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Id Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Id Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id Start Time</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Time</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Id Start Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Id Start Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id Start Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Plane</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Id Plane Sk</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Test</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Id End Time</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Dim Part</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>
